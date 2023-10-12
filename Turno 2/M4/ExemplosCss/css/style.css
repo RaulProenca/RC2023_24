@@ -1,3 +1,75 @@
 body{
-   background-color: rgb(173, 153, 209); 
+   /*background-color: rgb(173, 153, 209); */
+   background-image: url('../images/tree.jpg'), url('../images/house.png');
+   background-repeat: no-repeat;
+   background-size: 40%, 30%;
+   background-position: top right, bottom left;
+   background-attachment: fixed, scroll;
+}
+
+p{
+   color:red;
+}
+
+p{
+   color: #14ec55;
+   font-size: 25px;
+   font-weight: bold;
+}
+
+#dom{
+   color: #ecdd14;
+   font-size: 35px;
+   font-weight: bolder;
+}
+
+.seg{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p.seg{
+   font-style: italic;
+}
+
+p.seg, p.ter{
+   text-decoration: underline;
+}
+
+div.bloco1{
+   border: 2px solid red;
+   /* border-width: 2px;
+   border-style: solid;
+   border-color: red; */
+   border-radius: 6px;
+   width: 25%;
+   padding: 40px 0px 10px 30px;
+   margin: 20px 0px 150px 40px;
+   background-color: #ecdd14;
+   color: #da0123;
+}
+
+span{
+   color: blue;
+   border: 1px solid brown;
+   padding: 5px;
+   display: block;
+}
+
+img{
+   margin:auto;
+   display: block;
+}
+
+p.carro{
+   text-align: center;
+}
+
+img.fundo{
+   position: absolute;
+   z-index: -1;
+}
+
+img.sol{
+   position: absolute;
+   z-index: 0;
 }
