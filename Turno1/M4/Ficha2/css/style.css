@@ -1,0 +1,48 @@
+table
+{
+    font-family: 'Lucida Sans Unicode';
+    font-size: 12px;
+    border-collapse: collapse;
+    margin: auto;
+    text-align: center;
+    width: 60%; 
+}
+
+thead
+{
+    background-color: rgb(185, 201, 255);
+}
+
+thead tr:first-child th
+{
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+}
+
+tbody
+{
+    background-color: rgb(232, 237, 255);
+}
+
+tbody td
+{
+    border: solid 1px rgb(245, 247, 255);
+    width: 5%; /*140px*/
+}
+
+tbody td:hover:not(:first-child)
+{
+    background-color: rgb(208, 218, 253);
+}
+
+tfoot
+{
+    background-color: rgb(232, 237, 255);
+}
+
+tfoot tr:first-child th
+{
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+}
+
