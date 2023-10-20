@@ -1,0 +1,114 @@
+.belem1{
+    border-radius: 8px;
+    width: 400px;
+    height: 225px;
+}
+
+.belem2{
+
+    border-radius: 50%;
+    width: 400px;
+    height: 225px;
+    
+}
+
+.belem3{
+
+    border-radius: 4px;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #dddddd;
+}
+
+.belem4{
+
+    border-radius: 4px;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #dddddd;
+}
+
+.belem4:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+table{
+    text-align: center;
+    margin: auto;
+}
+
+td{
+    padding: 10px;
+    color: #1483eb;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+.grecia{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.polaroid{
+    margin-top: 30px;
+    width: 30%;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    margin-right: 20px;
+    float: left;
+}
+
+.polaroid img{
+    width: 100%;
+}
+
+.polaroid h3{
+    padding: 0px 20px 15px 20px;
+    text-align: center;
+    color: #1483eb;
+}
+
+.op1, .op2, .op3{
+    width: 300px;
+}
+
+.op1{
+    opacity: 0.2;
+}
+
+.op2{
+    opacity: 0.5;
+}
+
+.op3{
+    opacity: 1;
+}
+
+.manga img{
+    width: 280px;
+    height: 200px;
+}
+
+.blur {-webkit-filter: blur(4px);filter: blur(4px);}
+.brightness {-webkit-filter: brightness(250%);filter: brightness(250%);}
+.contrast {-webkit-filter: contrast(180%);filter: contrast(180%);}
+.grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
+.huerotate {-webkit-filter: hue-rotate(180deg);filter: hue-rotate(180deg);}
+.invert {-webkit-filter: invert(100%);filter: invert(100%);}
+.opacity {-webkit-filter: opacity(50%);filter: opacity(50%);}
+.saturate {-webkit-filter: saturate(7); filter: saturate(7);}
+.sepia {-webkit-filter: sepia(100%);filter: sepia(100%);}
+.shadow {-webkit-filter: drop-shadow(8px 8px 10px green);filter: drop-shadow(8px 8px 10px green);}
+
+
+.inverter{
+    width: 400px; 
+    height: 300px;
+}
+
+.inverter:hover{
+    transform: scaleX(-1);
+}
