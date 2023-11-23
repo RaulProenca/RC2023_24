@@ -1,0 +1,49 @@
+body{
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px;
+}
+
+#Esq{
+    width: 45%;
+    float: left;
+}
+
+#Esq img{
+    width: 100%;
+}
+
+#Dir{
+    width: 55%;
+    float: left;
+}
+
+#Dir .tag{
+    color: #2f393d;
+    background-color: #d7d7d7;
+    padding: 2px 8px 4px 8px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 11px;
+    border: none;
+}
+
+#Dir .tag:hover{
+    color: #00BA7E;
+}
+
+#Dir h1{
+    color: #1D1D1B;
+    font-size: 20px;
+    text-transform: none;
+}
+
+#Dir p{
+    color: #1d1d1b;
+    line-height: 12px;
+}
+
+#Dir child{
+    font-size: 30px;
+    font-weight: 700;
+    color: #00BA7E;
+}

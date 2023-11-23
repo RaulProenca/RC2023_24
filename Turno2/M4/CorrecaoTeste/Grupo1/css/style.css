@@ -1,0 +1,79 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 30px 80px;
+}
+
+#imagem{
+    margin-right: 30px;
+    float: left;
+}
+
+#imagem img{
+    height: 550px;
+}
+
+#detalhes{
+    float: left;
+}
+
+#detalhes h1, #detalhes h2{
+    line-height: 0.5em;
+}
+
+#detalhes .star{
+    width: 25px;
+}
+
+#detalhes .priceblack{
+    font-size: 22px;
+}
+
+#detalhes .pricered{
+    font-size: 35px;
+    color: red;
+    
+}
+
+#detalhes .infoblack{
+    padding: 5px 13px;
+    background-color: black;
+    color: #FFF;
+    font-size: 22px;
+}
+
+#detalhes .infored{
+    padding: 5px 13px;
+    background-color: red;
+    color: #FFF;
+    font-size: 22px;
+    vertical-align: super;
+}
+
+#detalhes .price{
+    text-align: right;
+}
+
+#detalhes .icons{
+    width: 40px;
+    padding-right: 10px;
+}
+
+#detalhes .buy{
+    background-color: red;
+    border-color: red;
+    color: #FFF;
+    padding: 10px 30px;
+    float: right;
+    font-weight: bold;
+}
+
+#detalhes a{
+    text-decoration: none;
+}
+
+#detalhes .video{
+    width: 270px;
+    height: 200px;
+    float: right;
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="row my-5">
+                <div class="col-sm-12">
+                    <h2 class="text-danger">SIMULADOR DE APOSTAS</h2>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-6">
+                    <ol>
+                        <li>Escolha a competição</li>
+                        <li>Seleccione as quotas</li>
+                        <li>Verifique se escolheu uma aposta simples ou múltipla</li>
+                        <li>Verifique qual o total a pagar</li>
+                    </ol>
+                </div>
+                <div class="col-sm-6">
+                    <img class="bet" src="images/bet.jpg" alt="Bet">
+                </div>
+            </div>
+
+            <div class="row my-5">
+                <label for="inputComp" class="col-sm-2 col-form-label text-primary fw-bold">
+                    COMPETIÇÃO</label>
+                <div class="col-sm-4">
+                    <select class="form-select" name="inputComp" id="inputComp">
+                        <option value="OP">Selecione uma Competição</option>
+                        <option value="PT">Portugal - Liga NOS</option>
+                        <option value="SP">Espanha - La Liga</option>
+                        <option value="IG">Inglaterra - Premier League</option>
+                        <option value="IT">Itália - Série A</option>
+                    </select>
+                </div>
+                <label class="offset-1 col-sm-2 col-form-label text-success fw-bold">
+                    TIPO APOSTA</label>
+            </div>
+
+            <div class="row my-2">
+                <label class="col-sm-3 col-form-label">
+                    Desportivo Aves - Portimonense</label>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info">2.10</button>
+                    <button type="button" class="btn btn-secondary">3.10</button>
+                    <button type="button" class="btn btn-success">3.30</button>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inputApostas" id="inputAposta1"
+                            value="simples" checked>
+                        <label class="form-check-label" for="inputAposta1">Aposta Simples</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inputApostas" id="inputAposta2"
+                            value="multipla">
+                        <label class="form-check-label" for="inputAposta2">Aposta múltipla</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="col-sm-3 col-form-label">
+                    Vitória Setubal - Rio Ave</label>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger">3.00</button>
+                    <button type="button" class="btn btn-secondary">2.20</button>
+                    <button type="button" class="btn btn-warning">1.95</button>
+                </div>
+                <label class="col-sm-1 col-form-label text-danger fw-bold">
+                    TOTAL:</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" disabled>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

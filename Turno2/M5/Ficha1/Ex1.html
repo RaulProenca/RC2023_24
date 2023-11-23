@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //Ex1
+        var aluno = prompt("Insira o nome do aluno: ");
+        var disc = prompt("Insira a disciplina: ");
+        var nota1 = prompt("Insira a 1ª nota: ");
+        var nota2 = prompt("Insira a 2ª nota: ");
+        var nota3 = prompt("Insira a 3ª nota: ");
+
+        var media = (parseInt(nota1) + parseInt(nota2) + parseInt(nota3)) / 3;
+
+        var classif = (media >= 9.5) ? "Aprovado" : "Reprovado";
+
+        document.write("O(a) aluno(a) ", aluno, ", à disciplina ", disc, ", obteve de média final ", media.toFixed(2), " e classificação de ", classif);
+
+
+        //Ex3
+
+        var numeros = new Array();
+        var estrelas = new Array();
+
+        document.write("Números: ");
+        for (let i = 0; i < 5; i++) {
+            let num = Math.floor(Math.random() * 50 + 1);
+            if (numeros.includes(num)) {
+                i--;
+            } else {
+                numeros.push(num);
+                document.write(num, " ");
+            }
+
+        }
+        document.write("<br>Estrelas: ");
+        for (let i = 0; i < 2; i++) {
+            let est = Math.floor(Math.random() * 12 + 1);
+            if (numeros.includes(est)) {
+                i--;
+            } else {
+                numeros.push(est);
+                document.write(est, " ");
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

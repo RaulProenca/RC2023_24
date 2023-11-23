@@ -1,0 +1,6 @@
+.bet{
+    width: 150px;
+    float: right;
+    position: absolute;
+    z-index: 1;
+}

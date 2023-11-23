@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var nomes = new Array("Ana", "Maria", "Manuel", "Rodrigo", "Rui", "António", "Sara");
+
+        //1a. Obtenha o segundo elemento do Array;
+        document.write("1a. ", nomes[1]);
+
+        //1b. Tamanho do Array;
+        document.write("<br>1b. ", nomes.length);
+
+        //1c. Crie outro Array com os valores “Henrique” e “Gonçalo” e concatene os Arrays; 
+        var nomes2 = new Array("Henrique", "Gonçalo");
+        document.write("<br>1c. ", nomes.concat(nomes2));
+
+        //1d. Insira um elemento no final do Array;
+        nomes.push("Ricardo");
+        document.write("<br>1d. ", nomes);
+
+        //1e. Insira um elemento início do Array;
+        nomes.unshift("Joaquim");
+        document.write("<br>1e. ", nomes);
+
+        //1f. Elimine o último elemento do Array;
+        nomes.pop();
+        document.write("<br>1f. ", nomes);
+
+        //1g. Elimine o primeiro elemento do Array;
+        nomes.shift();
+        document.write("<br>1g. ", nomes);
+
+        //1h. Imprima um elemento aleatório do Array;
+        var num = Math.floor(Math.random() * nomes.length);
+        document.write("<br>1h. ", nomes[num]);
+
+        //1i. Remova dois elementos a partir da posição 3 do Array.
+        nomes.splice(3, 2);
+        document.write("<br>1i. ", nomes);
+
+        //Grupo2
+        var str = new String("Curso Profissional de Gestão e Programação de Sistemas informáticos");
+        // var str = "Curso Profissional de Gestão e Programação de Sistemas informáticos";
+
+        //2a. Caracter da sexta posição;
+        document.write("<br>2a. ", str.charAt(6));
+
+        //2b. O índice da primeira ocorrência do caracter ‘r’;
+        document.write("<br>2b. ", str.indexOf('r'));
+
+        //2c. O índice da última ocorrência do caracter ‘r’;
+        document.write("<br>2c. ", str.lastIndexOf('r'));
+
+        //2d. Coloque todos os caracteres da frase em maiúsculas;
+        document.write("<br>2d. ", str.toUpperCase());
+
+        //2e. Coloque todos os caracteres da frase em minúsculas;
+        document.write("<br>2d. ", str.toLowerCase());
+
+        //2f. Remova da frase, a palavra “Profissional”
+        document.write("<br>2f. ", str.replace("Profissional", ""));
+
+        //Grupo 3
+        //3a. Data e hora completa;
+        var data = new Date();
+        document.write("<br>3a. ", data);
+        //3b. O dia;
+        document.write("<br>3b. ", data.getDate());
+        //3c. O mês, por extenso;
+        document.write("<br>3c. ", data.toLocaleDateString("pt-PT", { month: "long" }));
+        //3d. O ano;
+        document.write("<br>3d. ", data.getFullYear());
+        //3e. O dia da semana, por extenso;
+        document.write("<br>3e. ", data.toLocaleDateString("pt-PT", { weekday: "long" }));
+        //3f. A hora e minutos.
+        document.write("<br>3f. ", data.getHours(), ":", data.getMinutes());
+
+        //Grupo 4
+        var x = 3.445, y = 25, z = -31;
+        //4a. O valor absoluto da variável z;
+        document.write("<br>4a. ", Math.abs(z));
+        //4b. O maior valor inteiro acima do valor da variável x;
+        document.write("<br>4b. ", Math.ceil(x));
+        //4c. O maior valor inteiro abaixo do valor da variável x;
+        document.write("<br>4c. ", Math.floor(x));
+        //4d. Quadrado da variável y;
+        document.write("<br>4d. ", Math.pow(y, 2));
+        //4e. A raiz quadrada da variável y;
+        document.write("<br>4e. ", Math.sqrt(y));
+        //4f. Obtenha um número aleatório entre 10 e 20;
+        document.write("<br>4f. ", Math.floor(Math.random() * (20 - 10) + 10));
+        //4g. Arredonde o valor da variável x com duas casas decimais.
+        document.write("<br>4g. ", Math.round(x * 100) / 100);
+
+
+    </script>
+</body>
+
+</html>

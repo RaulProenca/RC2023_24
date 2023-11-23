@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        "use strict"; //Diretiva que obriga a declarar variáveis
+
+        /*Isto é um comentário
+          de várias linhas  
+        */
+
+        //Comentário de linha 
+        document.write("<h1>Olá Mundo!!</h1>");
+
+        var a = 5;
+
+        document.write("Tipo de dados da variável a: " + typeof (a));
+
+        var a = "Olá";
+
+        document.write("<br>Tipo de dados da variável a: " + typeof (a));
+
+        //Escrever na consola (debug)
+        console.log(a + ", bom dia");
+
+        //Caixa de alerta
+        //alert("Isto é uma caixa de alerta!!");
+
+        //Prompt
+        // var nome = prompt("Como é que tu te chamas?");
+        // document.write("<br>Olá, " + nome);
+
+        //Concatenação
+        var b = 5, c = 7;
+        document.write("<br>A soma de " + b + " e " + c + " é " + b + c);
+        document.write("<br>A soma de " + b + " e " + c + " é " + (b + c));
+        document.write("<br>A soma de ", b, " e ", c, " é ", b + c);
+
+        //Estruturas condicionais
+
+        /*     if (confirm("Hoje está Sol?")) {
+                document.write("<br>Então não é preciso guarda-chuva!!");
+            } else {
+                document.write("<br>Devia ter trazido guarda-chuva!!");
+            } */
+
+        var idade = Math.floor(Math.random() * 99 + 1);
+        document.write("<br>Idade: ", idade, "<br>");
+
+        switch (true) {
+            case (idade < 3):
+                document.write("És um bebé!!");
+                break;
+            case (idade < 11):
+                document.write("És uma criança!!");
+                break;
+            case (idade < 18):
+                document.write("És um adolescente!!");
+                break;
+            case (idade < 65):
+                document.write("És um adulto!!");
+                break;
+            default:
+                document.write("És um idoso!!")
+                break;
+        }
+
+        //For
+        document.write("<br>");
+        var numeros = [1, 2, 3, 4, 5];
+
+        for (let i = 0; i < numeros.length; i++) {
+            document.write(numeros[i], " ");
+        }
+
+        //Foreach
+
+        document.write("<br>");
+        var lista = Array.from({ length: 40 }, () => Math.floor(Math.random() * 40 + 1));
+
+        lista.forEach(valor => {
+            if (valor % 5 == 0) {
+                document.write(valor, " ");
+            }
+        });
+
+        //DoWhile
+        var numero;
+        document.write("<br>");
+        do {
+            numero = Math.floor(Math.random() * 50 + 1);
+            document.write("*");
+        } while (numero != 25);
+
+        //While
+        document.write("<br>");
+        var i = 1, j;
+        while (i <= 9) {
+
+            for (let j = 9 - i; j >= 1; j--) {
+                document.write("&nbsp;&nbsp;&nbsp;");
+            }
+
+            for (let j = 1; j <= i; j++) {
+                if (j != i)
+                    document.write(j, " ");
+            }
+
+            for (let j = i; j >= 1; j--) {
+                document.write(j, " ");
+            }
+
+            document.write("<br>");
+            i++;
+        }
+
+        //If inline
+
+        numero = Math.floor(Math.random() * 99 + 1);
+        var maioridade = (numero >= 18) ? "Maior de Idade" : "Menor de Idade";
+        document.write("<br>Idade: ", numero, " - ", maioridade);
+
+
+    </script>
+
+</body>
+
+</html>
