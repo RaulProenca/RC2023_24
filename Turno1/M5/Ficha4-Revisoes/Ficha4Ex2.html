@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Formulário</title>
+    <script src="js/script.js"></script>
+</head>
+
+<body onload="ordenaString()">
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="inputText">Digite uma frase:</label>
+                <input type="text" class="form-control" id="inputText" placeholder="Digite aqui">
+            </div>
+            <input type="button" class="btn btn-primary" value="Enviar" onclick="ordenaString()" />
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+
+</html>
