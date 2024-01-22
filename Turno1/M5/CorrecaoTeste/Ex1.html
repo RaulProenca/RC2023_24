@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var a = 4, b = 5, c = 7;
+        if (a >= b && a >= c && b >= c) {
+            alert(c + "," + b + "," + a);
+        } else if (a >= b && a >= c && c >= b) {
+            alert(b + "," + c + "," + a);
+        } else if (b >= a && b >= c && a >= c) {
+            alert(c + "," + a + "," + b);
+        } else if (b >= a && b >= c && c >= a) {
+            alert(a + "," + c + "," + b);
+        } else if (c >= a && c >= b && a >= b) {
+            alert(b + "," + a + "," + c);
+        } else if (c >= a && c >= b && b >= a) {
+            alert(a + "," + b + "," + c);
+        }
+
+    </script>
+
+</body>
+
+</html>

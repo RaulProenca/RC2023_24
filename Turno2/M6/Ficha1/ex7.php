@@ -1,7 +1,7 @@
 <?php
     $soma = "";
     if(isset($_POST["numero1"]) && isset($_POST["numero2"])){
-        $soma = intval($_POST["numero1"]) + 
+        $soma = "Resultado: " . intval($_POST["numero1"]) + 
                 intval($_POST["numero2"]);
         
     }
