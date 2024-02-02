@@ -20,9 +20,12 @@
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" method="POST" action="welcome.php">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" name="txt_email" value="" class="form-control"
+                <input type="email" id="inputEmail" name="txt_email"
+                    value="<?php if(isset($_COOKIE["email"])) echo $_COOKIE["email"]; ?>" class="form-control"
                     placeholder="Email address" required autofocus>
-                <input type="password" id="inputPassword" name="txt_pass" value="" class="form-control"
+                <input type="password" id="inputPassword" name="txt_pass" value="<?php 
+                    if(isset($_COOKIE["pass"]) && 
+                    password_verify("12345", $_COOKIE["pass"])) echo "12345" ; ?>" class="form-control"
                     placeholder="Password" required>
                 <div id="remember" class="checkbox">
                     <label>

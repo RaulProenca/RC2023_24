@@ -23,6 +23,8 @@ if(isset($_POST["inputEmail"]) && isset($_POST["inputPassword"])){
               Cookies Not Set <br>
               <a href='login.php'>Go to Login Page</a>";
     }
+
+    
 }
 
 

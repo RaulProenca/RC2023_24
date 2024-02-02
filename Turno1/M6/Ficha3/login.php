@@ -1,3 +1,9 @@
+<?php
+
+$new_pass = password_hash("12345", PASSWORD_DEFAULT);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,10 +27,16 @@
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" method="POST" action="welcome.php">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" value="" name="inputEmail" id="inputEmail" class="form-control"
-                    placeholder="Email address" required autofocus>
-                <input type="password" value="" name="inputPassword" id="inputPassword" class="form-control"
-                    placeholder="Password" required>
+                <input type="email" value="<?php echo (isset($_COOKIE["email"]) ? $_COOKIE["email"] : "");  ?>"
+                    name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required
+                    autofocus>
+                <input type="password" value="<?php 
+                
+                echo isset($_COOKIE["pass"]) && 
+                password_verify("12345", $_COOKIE["pass"]) ? "12345" : "";  ?>" 
+                
+                name="inputPassword" id="inputPassword"
+                    class="form-control" placeholder="Password" required>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" name="inputRemember" value="remember-me"> Remember me
