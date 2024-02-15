@@ -114,7 +114,7 @@
                                 <input type="text" placeholder="Search">
                                 <button type="submit"><i class="lni lni-search-alt"></i></button>
                             </form> -->
-                            <a href="javascript:void(0)" class="theme-btn">Login</a>
+                            <a href="{{ route('login') }}" class="theme-btn">Login</a>
                         </div> <!-- navbar collapse -->
                     </nav> <!-- navbar -->
                 </div>
