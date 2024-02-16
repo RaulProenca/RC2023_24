@@ -7,30 +7,31 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, material admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, material design, Flexy bootstrap 5 dashboard template" />
-    <meta name="description"
-        content="Flexy is powerful and clean admin dashboard template, inpired from Bootstrap Design" />
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Flexy bootstrap dashboard admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, material design, Flexy bootstrap 5 dashboard template" />
+    <meta name="description" content="Flexy is powerful and clean admin dashboard template" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>CPR A-do-Barbas</title>
+    <title>Flexy Bootstrap Dashboard - by Wrappixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo.jpg" />
-
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
     <!-- Custom CSS -->
-    <link href="/dist/css/style.min.css" rel="stylesheet" />
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
+    <!-- This Page CSS -->
+    <link rel="stylesheet" href="../dist/libs/prismjs/themes/prism-okaidia.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="../dist/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../dist/libs/select2/dist/css/select2.min.css">
 </head>
 
 <body>
-    <!-- ============================================================== -->
+    <!-- ============================================================= -->
     <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
+    <!-- ============================================================= -->
     <div class="preloader">
         <svg class="tea lds-ripple" width="37" height="48" viewbox="0 0 37 48" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -49,13 +50,13 @@
                 stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
     </div>
-    <!-- ============================================================== -->
+    <!-- ============================================================= -->
     <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+    <!-- ============================================================= -->
     <div id="main-wrapper">
-        <!-- ============================================================== -->
+        <!-- ============================================================= -->
         <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
+        <!-- ============================================================= -->
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header">
@@ -70,18 +71,18 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="/assets/images/logo.jpg" width="45" alt="homepage" class="dark-logo" />
+                            <img src="../assets/images/logo.gif" width="45" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="/assets/images/logo.jpg" alt="homepage" class="light-logo" />
+                            <img src="../assets/images/logo.gif" width="45" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <!-- <img src="/assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
+                            <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
                             <h6 style="font-weight: bolder; padding-top: 15px;">CPR A-DO-BARBAS</h6>
                             <!-- Light Logo text -->
-                            <img src="/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <!-- <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> -->
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -134,7 +135,8 @@
                         <!-- ============================================================== -->
                         <!-- Comment -->
                         <!-- ============================================================== -->
-
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
                         <!-- ============================================================== -->
 
                         <!-- ============================================================== -->
@@ -143,16 +145,11 @@
                         <li class="nav-item dropdown profile-dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="/assets/images/users/user.jpg" alt="user" width="30"
+                                <img src="../assets/images/users/1-old.jpg" alt="user" width="30"
                                     class="profile-pic rounded-circle" />
                                 <div class="d-none d-md-flex">
                                     <span class="ms-2">Olá,
-                                            <span class="text-dark fw-bold">
-                                                @auth()
-                                                    {{ Auth::user()->name }}
-                                                @endauth
-                                            </span>
-                                        </span>
+                                        <span class="text-dark fw-bold">Nuno Ferreira</span></span>
                                     <span>
                                         <i data-feather="chevron-down" class="feather-sm"></i>
                                     </span>
@@ -181,27 +178,21 @@
                           pb-4
                           border-bottom
                         ">
-                                            <img src="/assets/images/users/user.jpg" alt="user" width="90"
+                                            <img src="../assets/images/users/1-old.jpg" alt="user" width="90"
                                                 class="rounded-circle" />
                                             <div class="ms-4">
-                                                <h4 class="mb-0">
-                                                    @auth
-                                                        {{ Auth::user()->name }}
-                                                    @endauth
-                                                </h4>
+                                                <h4 class="mb-0">Nuno Ferreira</h4>
                                                 <span class="text-muted">Administrador</span>
                                                 <p class="text-muted mb-0 mt-1">
                                                     <i data-feather="mail" class="feather-sm me-1"></i>
-                                                    @auth
-                                                        {{ Auth::user()->email }}
-                                                    @endauth
+                                                    info@cpradb.pt
                                                 </p>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="p-30 pt-0">
                                         <div class="message-center message-body position-relative"
-                                            style="height: 150px">
+                                            style="height: 110px">
                                             <!-- Message -->
                                             <a href="javascript:void(0)" class="
                             message-item
@@ -238,16 +229,11 @@
                                             </a>
 
 
-                                        <div class="mt-4">
-                                            <a class="btn btn-info text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                          document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
+                                        </div>
+                                        <div class="mt-1">
+                                            <a class="btn btn-info text-white" href="javascript:void(0);">
+                                                Logout
                                             </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
                                         </div>
                                     </li>
                                 </ul>
@@ -281,7 +267,7 @@
                                     class="hide-menu">Atletas</span></a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a href="{{ route('atleta.create') }}" class="sidebar-link"><i class="ri-user-add-line"></i><span
+                                    <a href="addatletas.html" class="sidebar-link"><i class="ri-user-add-line"></i><span
                                             class="hide-menu">
                                             Novo Atleta</span></a>
                                 </li>
@@ -356,36 +342,45 @@
             </div>
             <!-- End Bottom points-->
         </aside>
-        <!-- ============================================================== -->
+        <!-- ============================================================= -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
+        <!-- ============================================================= -->
+        <!-- ============================================================= -->
         <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+        <!-- ============================================================= -->
         <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <div class="page-titles">
                 <div class="row">
-                    <div class="col-lg-8 col-md-6 col-12 align-self-center">
-                        <h4 class="text-muted mb-0 fw-normal">Welcome Johnathan</h4>
-                        <h1 class="mb-0 fw-bold">Analytical Dashboard</h1>
+                    <div class="col-lg-7 col-md-6 col-12 align-self-center">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 d-flex align-items-center">
+                                <li class="breadcrumb-item">
+                                    <a href="home.html" class="link"><i class="ri-home-3-line fs-5"></i></a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Adicionar
+                                </li>
+                            </ol>
+                        </nav>
+                        <h1 class="mb-0 fw-bold">Adicionar Atleta</h1>
                     </div>
                     <div class="
-                col-lg-4 col-md-6
+                col-lg-5 col-md-6
                 d-none d-md-flex
                 align-items-center
                 justify-content-end
               ">
                         <select class="form-select theme-select border-0" aria-label="Default select example">
-                            <option value="1">Today 23 March</option>
-                            <option value="2">Today 24 March</option>
-                            <option value="3">Today 25 March</option>
+                            <option value="1" id="dataatual">
+
+                            </option>
                         </select>
-                        <a href="javascript:void(0)" class="btn btn-info d-flex align-items-center ms-2">
-                            <i class="ri-add-line me-1"></i>
-                            Add New
+                        <a href="listaratletas.html" class="btn btn-success d-flex align-items-center ms-2">
+                            <i class="ri-list-check me-1"></i>
+                            Listar Atletas
                         </a>
                     </div>
                 </div>
@@ -393,648 +388,214 @@
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <!-- ============================================================== -->
+            <!-- ============================================================= -->
             <!-- Container fluid  -->
-            <!-- ============================================================== -->
+            <!-- ============================================================= -->
             <div class="container-fluid">
-                <!-- Row -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-6">
-                        <div class="card welcome-card overflow-hidden bg-light-info border-0">
-                            <div class="card-body">
-                                <h3 class="text-primary position-relative">Hey John,</h3>
-                                <h3 class="text-primary position-relative">
-                                    Download latest report
-                                </h3>
-                                <a href="#" class="btn btn-info mb-4 mt-3 position-relative">Download</a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6 d-flex align-items-stretch">
-                                <!-- earnings card -->
-                                <div class="card bg-primary w-100">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <h4 class="card-title text-white">Earnings</h4>
-                                            <div class="ms-auto">
-                                                <span class="
-                              btn btn-lg btn-info btn-circle
-                              d-flex
-                              align-items-center
-                              justify-content-center
-                            ">
-                                                    <i data-feather="dollar-sign"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3">
-                                            <h2 class="fs-8 text-white mb-0">$93,438.78</h2>
-                                            <span class="text-white op-5">Monthly revenue</span>
-                                        </div>
+                <!-- ============================================================= -->
+                <!-- Start Page Content -->
+                <!-- ============================================================= -->
+                <div class="card overflow-hidden">
+                    <div class="card-body">
+                        <h4 class="card-title mb-3 pb-3 border-bottom" style="color: #FF8C00;">Atleta</h4>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="inputNome" name="inputNome"
+                                            placeholder="Insira o nome do atleta" />
+                                        <label for="inputNome">Nome</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12 col-md-6 d-flex align-items-stretch">
-                                <!-- monthly sales card -->
-                                <div class="card w-100 overflow-hidden">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <h5 class="fw-normal mb-0 text-muted">
-                                                    Monthly Sales
-                                                </h5>
-                                                <h2 class="mb-0">3246</h2>
-                                            </div>
-                                            <div class="ms-auto">
-                                                <span class="
-                              btn btn-lg btn-warning btn-circle
-                              d-flex
-                              align-items-center
-                              justify-content-center
-                            ">
-                                                    <i data-feather="shopping-bag"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- chart -->
-                                    <div id="monthly-sales"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card w-100">
-                            <div class="card-body">
-                                <div class="d-md-flex align-items-center">
-                                    <div>
-                                        <h3 class="card-title">Sales Overview</h3>
-                                        <h6 class="card-subtitle">Ample admin Vs Pixel admin</h6>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <ul class="list-style-none">
-                                            <li class="list-inline-item text-primary">
-                                                <i class="ri-checkbox-blank-circle-fill fs-1 me-1"></i>
-                                                Ample
-                                            </li>
-                                            <li class="list-inline-item text-info">
-                                                <i class="ri-checkbox-blank-circle-fill fs-1 me-1"></i>Pixel Admin
-                                            </li>
-                                        </ul>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="inputEmail" name="inputEmail"
+                                            placeholder="name@example.com" />
+                                        <label for="inputEmail">Email</label>
                                     </div>
                                 </div>
-                                <div id="sales-overview" class="mt-4"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- column -->
-                    <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="card w-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center pb-3 border-bottom">
-                                    <div>
-                                        <h3 class="card-title">Total Sales</h3>
-                                        <h6 class="card-subtitle mb-0">Overview of Years</h6>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="date" class="form-control" id="inputDataNasc" name="inputDataNasc"
+                                            placeholder="Data de Nascimento" />
+                                        <label for="inputDataNasc">Data de Nascimento</label>
                                     </div>
-                                    <div class="ms-auto">
-                                        <select class="form-select theme-select border-0"
-                                            aria-label="Default select example">
-                                            <option value="1">March 2023</option>
-                                            <option value="2">March 2023</option>
-                                            <option value="3">March 2023</option>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <select class="select2 form-select form-control"
+                                            style="width: 100%; padding: 1rem 12px;" placeholder="Escalão"
+                                            id="selectEscalao" name="selectEscalao">
+                                            <option selected="selected" disabled>Escalão</option>
+                                            <option value="BA">Benjamin A</option>
+                                            <option value="BB">Benjamin B</option>
+                                            <option value="IF">Infantil</option>
+                                            <option value="IN">Iniciado</option>
+                                            <option value="JV">Juvenil</option>
+                                            <option value="JU">Júnior</option>
+                                            <option value="S23">Sub-23</option>
+                                            <option value="SN">Sénior</option>
+                                            <option value="M35">M35</option>
+                                            <option value="M40">M40</option>
+                                            <option value="M45">M45</option>
+                                            <option value="M50">M50</option>
+                                            <option value="M55">M55</option>
+                                            <option value="M60">M60</option>
+                                            <option value="M65">M65</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <h5 class="text-muted fw-normal mb-0">Sales Yearly</h5>
-                                    <div class="ms-auto">
-                                        <h2 class="fw-bold mb-0">8,364,398</h2>
+                                <div class="col-md-2">
+                                    <label>Género</label>
+                                    <div class="form-floating mb-3">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inputGen" id="inputGen1"
+                                                value="M" checked>
+                                            <label class="form-check-label" for="inputGen1">
+                                                M
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inputGen" id="inputGen2"
+                                                value="F">
+                                            <label class="form-check-label" for="inputGen2">
+                                                F
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="position-relative">
-                                    <div id="total-sales" class="mt-4 pt-2"></div>
-                                    <i data-feather="shopping-cart"
-                                        class="total-sales-icon text-muted-lite feather-xl"></i>
-                                </div>
-                                <ul class="list-style-none d-flex justify-content-between mt-5">
-                                    <li class="list-inline-item">
-                                        <i class="
-                          ri-checkbox-blank-circle-fill
-                          text-info
-                          fs-1
-                          me-1
-                        "></i>
-                                        2023
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="
-                          ri-checkbox-blank-circle-fill
-                          text-primary
-                          fs-1
-                          me-1
-                        "></i>2023
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="
-                          ri-checkbox-blank-circle-fill
-                          text-warning
-                          fs-1
-                          me-1
-                        "></i>2019
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- column -->
-                    <div class="col-lg-8 d-flex align-items-stretch">
-                        <div class="card w-100">
-                            <div class="card-body">
-                                <div class="d-md-flex align-items-center">
-                                    <div>
-                                        <h3 class="card-title">Products Performance</h3>
-                                        <h6 class="card-subtitle mb-0">
-                                            Ample Admin Vs Pixel Admin
-                                        </h6>
+                                <div class="col-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="inputCC" name="inputCC"
+                                            placeholder="Cartão de cidadão do atleta" />
+                                        <label for="InputCC">BI/CC</label>
                                     </div>
-                                    <div class="ms-auto mt-3 mt-md-0">
-                                        <select class="form-select theme-select border-0"
-                                            aria-label="Default select example">
-                                            <option value="1">March 2023</option>
-                                            <option value="2">March 2023</option>
-                                            <option value="3">March 2023</option>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="inputNIF" name="inputNIF"
+                                            placeholder="NIf do atleta" />
+                                        <label for="InputNIF">NIF</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="inputTel" name="inputTel"
+                                            placeholder="Telemóvel" />
+                                        <label for="InputTel">Telemóvel</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-floating mb-3">
+                                        <select class="select2 form-select form-control"
+                                            style="width: 100%; padding: 1rem 12px;" placeholder="Nacionalidade"
+                                            id="selectNac" name="selectNac">
+                                            <option selected="selected" disabled>Nacionalidade</option>
+                                            <option>Benjamin A</option>
+                                            <option>Benjamin B</option>
+                                            <option>Infantil</option>
+                                            <option>Iniciado</option>
+                                            <option>Juvenil</option>
+                                            <option>Júnior</option>
+                                            <option>Sub-23</option>
+                                            <option>Sénior</option>
+                                            <option>M35</option>
+                                            <option>M40</option>
+                                            <option>M45</option>
+                                            <option>M50</option>
+                                            <option>M55</option>
+                                            <option>M60</option>
+                                            <option>M65</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="table-responsive mt-4">
-                                    <table class="
-                        table
-                        mb-0
-                        text-nowrap
-                        varient-table
-                        align-middle
-                        fs-3
-                      ">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" class="px-0 text-muted">Assigned</th>
-                                                <th scope="col" class="px-0 text-muted">Name</th>
-                                                <th scope="col" class="px-0 text-muted">Priority</th>
-                                                <th scope="col" class="px-0 text-muted text-end">
-                                                    Budget
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="px-0">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="/assets/images/users/1.jpg" class="rounded-circle"
-                                                            width="35" alt="flexy" />
-                                                        <div class="ms-3">
-                                                            <h6 class="mb-0 fw-bold">Sunil Joshi</h6>
-                                                            <span class="text-muted fs-9">Web Designer</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="px-0">Elite Admin</td>
-                                                <td class="px-0">
-                                                    <span class="badge bg-info">Low</span>
-                                                </td>
-                                                <td class="px-0 text-dark font-weight-medium text-end">
-                                                    $3.9K
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-0">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="/assets/images/users/2.jpg" class="rounded-circle"
-                                                            width="35" alt="flexy" />
-                                                        <div class="ms-3">
-                                                            <h6 class="mb-0 fw-bold">Andrew McDownland</h6>
-                                                            <span class="text-muted fs-9">Project Manager</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="px-0">Real Homes WP Theme</td>
-                                                <td class="px-0">
-                                                    <span class="badge bg-primary">Medium</span>
-                                                </td>
-                                                <td class="px-0 text-dark font-weight-medium text-end">
-                                                    $24.5K
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-0">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="/assets/images/users/3.jpg" class="rounded-circle"
-                                                            width="35" alt="flexy" />
-                                                        <div class="ms-3">
-                                                            <h6 class="mb-0 fw-bold">Christopher Jamil</h6>
-                                                            <span class="text-muted fs-9">SEO Manager</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="px-0">MedicalPro WP Theme</td>
-                                                <td class="px-0">
-                                                    <span class="badge bg-warning">Hight</span>
-                                                </td>
-                                                <td class="px-0 text-dark font-weight-medium text-end">
-                                                    $12.8K
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-0">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="/assets/images/users/4.jpg" class="rounded-circle"
-                                                            width="35" alt="flexy" />
-                                                        <div class="ms-3">
-                                                            <h6 class="mb-0 fw-bold">Nirav Joshi</h6>
-                                                            <span class="text-muted fs-9">Frontend Engineer</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="px-0">Hosting Press HTML</td>
-                                                <td class="px-0">
-                                                    <span class="badge bg-danger">Low</span>
-                                                </td>
-                                                <td class="px-0 text-dark font-weight-medium text-end">
-                                                    $2.4K
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-0">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="/assets/images/users/5.jpg" class="rounded-circle"
-                                                            width="35" alt="flexy" />
-                                                        <div class="ms-3">
-                                                            <h6 class="mb-0 fw-bold">Micheal Doe</h6>
-                                                            <span class="text-muted fs-9">Content Writer</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="px-0">Helping Hands WP Theme</td>
-                                                <td class="px-0">
-                                                    <span class="badge bg-success">Low</span>
-                                                </td>
-                                                <td class="px-0 text-dark font-weight-medium text-end">
-                                                    $9.3K
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- column -->
-                    <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="card w-100">
-                            <img src="/assets/images/background/blog-bg.jpg" class="card-img-top blog-img"
-                                alt="..." />
-                            <div class="card-body">
-                                <div class="d-flex align-items-center text-muted-lite">
-                                    <i data-feather="clock" class="feather-lg me-1"></i>
-                                    22 March, 2023
-                                </div>
-                                <h3 class="card-title mt-4">
-                                    Super awesome, Angular 12 is coming soon!
-                                </h3>
-                                <ul class="list-style-none mt-3 pt-1 pb-4">
-                                    <li class="list-inline-item">
-                                        <span class="badge bg-primary">Medium</span>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <span class="badge bg-danger">Low</span>
-                                    </li>
-                                </ul>
-                                <div class="border-top pt-4 d-flex align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <a href="#" class="me-1" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="John Deo">
-                                            <img src="/assets/images/users/1.jpg" class="rounded-circle" width="35"
-                                                alt="flexy" />
-                                        </a>
-                                        <a href="#" class="me-1" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Micheal Doe">
-                                            <img src="/assets/images/users/2.jpg" class="rounded-circle" width="35"
-                                                alt="flexy" />
-                                        </a>
-                                        <a href="#" class="
-                          me-1
-                          round-md
-                          rounded-circle
-                          d-flex
-                          align-items-center
-                          justify-content-center
-                          bg-light-success
-                          text-success
-                        " data-bs-toggle="tooltip" data-bs-placement="top" title="Add new"><i data-feather="plus"
-                                                class="feather-sm"></i></a>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <a href="javascript:void(0)" class="text-muted-lite">
-                                            <i data-feather="message-circle" class=""></i>
-                                        </a>
+                                <div class="col-4">
+                                    <div class="form-floating mb-3">
+                                        <select class="select2 form-select form-control"
+                                            style="width: 100%; padding: 1rem 12px;" placeholder="T-shirt"
+                                            id="selectShirt" name="selectShirt">
+                                            <option selected="selected" disabled>T-shirt</option>
+                                            <option>XS</option>
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                            <option>XL</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- column -->
-                    <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="card w-100 overflow-hidden">
-                            <div class="card-body pb-0">
-                                <div class="d-flex align-items-start">
-                                    <div>
-                                        <h3 class="card-title">Weekly Stats</h3>
-                                        <h6 class="card-subtitle mb-0">Average sales</h6>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted-lite" id="year1-dropdown"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i data-feather="more-horizontal"></i>
-                                            </a>
-                                            <ul class="dropdown-menu" aria-labelledby="year1-dropdown">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                </li>
-                                            </ul>
+                                <div class="col-4">
+                                    <div class="form-floating mb-3">
+                                        <div class="form-check form-switch mt-3">
+                                            <input class="form-check-input" type="checkbox" id="switchFederado"
+                                                name="switchFederado" checked />
+                                            <label class="form-check-label" for="switchFederado">Federado</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mt-5 pb-3 d-flex align-items-center">
-                                    <span class="btn btn-primary btn-circle">
-                                        <i data-feather="shopping-cart"></i>
-                                    </span>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold">Top Sales</h5>
-                                        <span class="text-muted fs-9">Johnathan Doe</span>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-light-secondary text-muted">+68%</span>
-                                    </div>
-                                </div>
-                                <div class="py-3 d-flex align-items-center">
-                                    <span class="btn btn-warning btn-circle">
-                                        <i data-feather="star"></i>
-                                    </span>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold">Best Seller</h5>
-                                        <span class="text-muted fs-9">MaterialPro Admin</span>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-light-secondary text-muted">+68%</span>
-                                    </div>
-                                </div>
-                                <div class="pt-3 d-flex align-items-center">
-                                    <span class="btn btn-success btn-circle">
-                                        <i data-feather="message-square"></i>
-                                    </span>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold">Most Commented</h5>
-                                        <span class="text-muted fs-9">Ample Admin</span>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-light-secondary text-muted">+68%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="weekly-stats"></div>
-                        </div>
-                    </div>
-                    <!-- column -->
-                    <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="card w-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-start">
-                                    <div>
-                                        <h3 class="card-title">Daily Activities</h3>
-                                        <h6 class="card-subtitle mb-0">Overview of Years</h6>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <div class="dropdown">
-                                            <a href="#" class="text-muted-lite" id="year1-dropdown"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i data-feather="more-horizontal"></i>
-                                            </a>
-                                            <ul class="dropdown-menu" aria-labelledby="year1-dropdown">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                </li>
-                                            </ul>
+                                <div class="col-12">
+                                    <div class="d-md-flex align-items-center mt-3">
+                                        <span class="input-group-text bg-danger text-white">Foto</span>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                        </div>
+                                        <div class="ms-auto mt-3 mt-md-0">
+                                            <button type="reset" class="
+                                                    btn btn-warning
+                                                    font-weight-medium
+                                                    px-4
+                                                    ">
+                                                <div class="d-flex align-items-center">
+                                                    <i data-feather="rotate-ccw" class="feather-sm fill-white me-2"></i>
+                                                    Limpar
+                                                </div>
+                                            </button>
+                                        </div>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="ms-auto mt-3 mt-md-0">
+                                            <button type="submit" class="
+                                                    btn btn-info
+                                                    font-weight-medium
+                                                    px-4
+                                                    ">
+                                                <div class="d-flex align-items-center">
+                                                    <i data-feather="save" class="feather-sm fill-white me-2"></i>
+                                                    Gravar
+                                                </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- timeline -->
-                                <div class="position-relative mt-5 scrollable" style="height: 300px">
-                                    <ul class="timeline-widget">
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="
-                            timeline-badge
-                            me-3
-                            badge-primary
-                            flex-shrink-0
-                          "></span>
-                                            <div class="timeline-desc fs-3 text-muted mt-n1">
-                                                Payment received from John Doe of $385.90
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="timeline-badge me-3 badge-info flex-shrink-0"></span>
-                                            <div class="timeline-desc fs-3 text-dark fw-bold mt-n1">
-                                                Project Meeting
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="
-                            timeline-badge
-                            me-3
-                            badge-warning
-                            flex-shrink-0
-                          "></span>
-                                            <div class="timeline-desc fs-3 text-dark fw-bold mt-n1">
-                                                New Sale recorded
-                                                <a href="javascript:void(0)" class="text-info">#ML-3467</a>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="timeline-badge me-3 badge-danger flex-shrink-0"></span>
-                                            <div class="timeline-desc fs-3 text-muted mt-n1">
-                                                Payment was made of $64.95 to Michael Anderson
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="
-                            timeline-badge
-                            me-3
-                            badge-success
-                            flex-shrink-0
-                          "></span>
-                                            <div class="timeline-desc fs-3 text-muted mt-n1">
-                                                New payment receipt created for Alphanso Golvo
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="
-                            timeline-badge
-                            me-3
-                            badge-primary
-                            flex-shrink-0
-                          "></span>
-                                            <div class="timeline-desc fs-3 text-dark fw-bold mt-n1">
-                                                New Sale recorded
-                                                <a href="javascript:void(0)" class="text-info">#ML-3467</a>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="timeline-badge me-3 badge-info flex-shrink-0"></span>
-                                            <div class="timeline-desc fs-3 text-dark fw-bold mt-n1">
-                                                Project Meeting
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="
-                            timeline-badge
-                            me-3
-                            badge-primary
-                            flex-shrink-0
-                          "></span>
-                                            <div class="timeline-desc fs-3 text-muted mt-n1">
-                                                Payment received from John Doe of $385.90
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="timeline-badge me-3 badge-info flex-shrink-0"></span>
-                                            <div class="timeline-desc fs-3 text-dark fw-bold mt-n1">
-                                                Project Meeting
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="
-                            timeline-badge
-                            me-3
-                            badge-warning
-                            flex-shrink-0
-                          "></span>
-                                            <div class="timeline-desc fs-3 text-dark fw-bold mt-n1">
-                                                New Sale recorded
-                                                <a href="javascript:void(0)" class="text-info">#ML-3467</a>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="timeline-badge me-3 badge-danger flex-shrink-0"></span>
-                                            <div class="timeline-desc fs-3 text-muted mt-n1">
-                                                Payment was made of $64.95 to Michael Anderson
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="
-                            timeline-badge
-                            me-3
-                            badge-success
-                            flex-shrink-0
-                          "></span>
-                                            <div class="timeline-desc fs-3 text-muted mt-n1">
-                                                New payment receipt created for Alphanso Golvo
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item mb-4">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="
-                            timeline-badge
-                            me-3
-                            badge-primary
-                            flex-shrink-0
-                          "></span>
-                                            <div class="timeline-desc fs-3 text-dark fw-bold mt-n1">
-                                                New Sale recorded
-                                                <a href="javascript:void(0)" class="text-info">#ML-3467</a>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-time fw-bold text-dark fs-2 mt-n1">
-                                                09.46
-                                            </div>
-                                            <span class="timeline-badge me-3 badge-info flex-shrink-0"></span>
-                                            <div class="timeline-desc fs-3 text-dark fw-bold mt-n1">
-                                                Project Meeting
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
+
                 </div>
-                <!-- Row -->
+                <!-- ============================================================= -->
+                <!-- End PAge Content -->
+                <!-- ============================================================= -->
             </div>
-            <!-- ============================================================== -->
+            <!-- ============================================================= -->
             <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
+            <!-- ============================================================= -->
+            <!-- ============================================================= -->
             <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer">2023© All Rights Reserved by Wrappixel</footer>
-            <!-- ============================================================== -->
+            <!-- ============================================================= -->
+            <footer class="footer text-center">
+                2023© All Rights Reserved by Wrappixel
+            </footer>
+            <!-- ============================================================= -->
             <!-- End footer -->
-            <!-- ============================================================== -->
+            <!-- ============================================================= -->
         </div>
-        <!-- ============================================================== -->
+        <!-- ============================================================= -->
         <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+        <!-- ============================================================= -->
     </div>
-    <!-- ============================================================== -->
+    <!-- ============================================================= -->
     <!-- End Wrapper -->
-    <!-- ============================================================== -->
+    <!-- ============================================================= -->
     <aside class="nav-customizer" id="shopping-cart">
         <div class="nav-customizer-body">
             <div class="rounded-top d-flex p-30 bg-white pb-3 align-items-center">
@@ -1051,7 +612,7 @@
                     <li class="py-4 border-bottom">
                         <div class="d-flex align-items-center">
                             <div>
-                                <img src="/assets/images/product/s-prd1.jpg" class="btn-rounded-lg" alt="product" />
+                                <img src="../assets/images/product/s-prd1.jpg" class="btn-rounded-lg" alt="product" />
                             </div>
                             <div class="ms-3 ps-1">
                                 <h5 class="mb-0">Supreme toys cooker</h5>
@@ -1102,7 +663,7 @@
                     <li class="py-4 border-bottom">
                         <div class="d-flex align-items-center">
                             <div>
-                                <img src="/assets/images/product/s-prd2.jpg" class="btn-rounded-lg" alt="product" />
+                                <img src="../assets/images/product/s-prd2.jpg" class="btn-rounded-lg" alt="product" />
                             </div>
                             <div class="ms-3 ps-1">
                                 <h5 class="mb-0">Supreme toys cooker</h5>
@@ -1153,7 +714,7 @@
                     <li class="py-4 border-bottom">
                         <div class="d-flex align-items-center">
                             <div>
-                                <img src="/assets/images/product/s-prd3.jpg" class="btn-rounded-lg" alt="product" />
+                                <img src="../assets/images/product/s-prd3.jpg" class="btn-rounded-lg" alt="product" />
                             </div>
                             <div class="ms-3 ps-1">
                                 <h5 class="mb-0">Supreme toys cooker</h5>
@@ -1204,7 +765,7 @@
                     <li class="py-4 border-bottom">
                         <div class="d-flex align-items-center">
                             <div>
-                                <img src="/assets/images/product/s-prd4.jpg" class="btn-rounded-lg" alt="product" />
+                                <img src="../assets/images/product/s-prd4.jpg" class="btn-rounded-lg" alt="product" />
                             </div>
                             <div class="ms-3 ps-1">
                                 <h5 class="mb-0">Supreme toys cooker</h5>
@@ -1442,7 +1003,7 @@
                       py-2
                     " id="chat_user_1" data-user-id="1">
                                     <span class="user-img position-relative d-inline-block">
-                                        <img src="/assets/images/users/1.jpg" alt="user"
+                                        <img src="../assets/images/users/1.jpg" alt="user"
                                             class="rounded-circle w-100" />
                                         <span class="profile-status rounded-circle online"></span>
                                     </span>
@@ -1467,7 +1028,7 @@
                       py-2
                     " id="chat_user_2" data-user-id="2">
                                     <span class="user-img position-relative d-inline-block">
-                                        <img src="/assets/images/users/2.jpg" alt="user"
+                                        <img src="../assets/images/users/2.jpg" alt="user"
                                             class="rounded-circle w-100" />
                                         <span class="profile-status rounded-circle busy"></span>
                                     </span>
@@ -1492,7 +1053,7 @@
                       py-2
                     " id="chat_user_3" data-user-id="3">
                                     <span class="user-img position-relative d-inline-block">
-                                        <img src="/assets/images/users/3.jpg" alt="user"
+                                        <img src="../assets/images/users/3.jpg" alt="user"
                                             class="rounded-circle w-100" />
                                         <span class="profile-status rounded-circle away"></span>
                                     </span>
@@ -1517,7 +1078,7 @@
                       py-2
                     " id="chat_user_4" data-user-id="4">
                                     <span class="user-img position-relative d-inline-block">
-                                        <img src="/assets/images/users/4.jpg" alt="user"
+                                        <img src="../assets/images/users/4.jpg" alt="user"
                                             class="rounded-circle w-100" />
                                         <span class="profile-status rounded-circle offline"></span>
                                     </span>
@@ -1543,7 +1104,7 @@
                       py-2
                     " id="chat_user_5" data-user-id="5">
                                     <span class="user-img position-relative d-inline-block">
-                                        <img src="/assets/images/users/5.jpg" alt="user"
+                                        <img src="../assets/images/users/5.jpg" alt="user"
                                             class="rounded-circle w-100" />
                                         <span class="profile-status rounded-circle offline"></span>
                                     </span>
@@ -1569,7 +1130,7 @@
                       py-2
                     " id="chat_user_6" data-user-id="6">
                                     <span class="user-img position-relative d-inline-block">
-                                        <img src="/assets/images/users/6.jpg" alt="user"
+                                        <img src="../assets/images/users/6.jpg" alt="user"
                                             class="rounded-circle w-100" />
                                         <span class="profile-status rounded-circle offline"></span>
                                     </span>
@@ -1595,7 +1156,7 @@
                       py-2
                     " id="chat_user_7" data-user-id="7">
                                     <span class="user-img position-relative d-inline-block">
-                                        <img src="/assets/images/users/7.jpg" alt="user"
+                                        <img src="../assets/images/users/7.jpg" alt="user"
                                             class="rounded-circle w-100" />
                                         <span class="profile-status rounded-circle offline"></span>
                                     </span>
@@ -1621,7 +1182,7 @@
                       py-2
                     " id="chat_user_8" data-user-id="8">
                                     <span class="user-img position-relative d-inline-block">
-                                        <img src="/assets/images/users/8.jpg" alt="user"
+                                        <img src="../assets/images/users/8.jpg" alt="user"
                                             class="rounded-circle w-100" />
                                         <span class="profile-status rounded-circle offline"></span>
                                     </span>
@@ -1668,7 +1229,7 @@
                         </div>
                         <div class="sl-item">
                             <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="/assets/images/users/2.jpg" />
+                                <img class="rounded-circle" alt="user" src="../assets/images/users/2.jpg" />
                             </div>
                             <div class="sl-right">
                                 <div class="font-weight-medium">
@@ -1679,7 +1240,7 @@
                         </div>
                         <div class="sl-item">
                             <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="/assets/images/users/1.jpg" />
+                                <img class="rounded-circle" alt="user" src="../assets/images/users/1.jpg" />
                             </div>
                             <div class="sl-right">
                                 <div>
@@ -1711,7 +1272,7 @@
                         </div>
                         <div class="sl-item">
                             <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="/assets/images/users/4.jpg" />
+                                <img class="rounded-circle" alt="user" src="../assets/images/users/4.jpg" />
                             </div>
                             <div class="sl-right">
                                 <div class="font-weight-medium">
@@ -1722,7 +1283,7 @@
                         </div>
                         <div class="sl-item">
                             <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="/assets/images/users/6.jpg" />
+                                <img class="rounded-circle" alt="user" src="../assets/images/users/6.jpg" />
                             </div>
                             <div class="sl-right">
                                 <div>
@@ -1739,30 +1300,47 @@
         </div>
     </aside>
     <div class="chat-windows"></div>
-    <!-- ============================================================== -->
+    <!-- ============================================================= -->
     <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="/dist/libs/jquery/dist/jquery.min.js"></script>
+    <!-- ============================================================= -->
+    <script src="../dist/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="/dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- apps -->
-    <script src="/dist/js/app.min.js"></script>
-    <script src="/dist/js/app.init.js"></script>
-    <script src="/dist/js/app-style-switcher.js"></script>
+    <script src="../dist/js/app.min.js"></script>
+    <script src="../dist/js/app.init.js"></script>
+    <script src="../dist/js/app-style-switcher.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="/dist/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js"></script>
-    <script src="/dist/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="../dist/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js"></script>
+    <script src="../dist/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!--Wave Effects -->
-    <script src="/dist/js/waves.js"></script>
+    <script src="../dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="/dist/js/sidebarmenu.js"></script>
+    <script src="../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="/dist/js/feather.min.js"></script>
-    <script src="/dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <script src="/dist/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <!-- Chart JS -->
-    <script src="/dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="../dist/js/feather.min.js"></script>
+    <script src="../dist/js/custom.min.js"></script>
+    <!-- This Page JS -->
+    <script src="../dist/libs/prismjs/prism.js"></script>
+    <!--This page plugins -->
+    <script src="../dist/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+
+    <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
+
+    <script src="../dist/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="../dist/libs/select2/dist/js/select2.min.js"></script>
+    <script src="../dist/js/pages/forms/select2/select2.init.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataatual').text(new Date().toLocaleDateString('pt-PT', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            }));
+        });
+    </script>
+
 </body>
 
 </html>

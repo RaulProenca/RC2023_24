@@ -73,17 +73,22 @@
           <div class="row mt-4">
             <div class="col-12">
 
-                <form method="POST" class="form-horizontal" action="{{ route('register') }}">
-                    @csrf
-                
+                <form method="POST" class="form-horizontal" action="{{ route('password.update') }}">
+                @csrf
+
+                <input type="hidden" name="token" value="{{ $token }}">
+
+
                 <div class="form-floating mb-3">
 
-                    <input id="email" type="email" placeholder="E-mail" class="form-control form-input-bg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                    <input id="email" type="email" placeholder="Email" class="form-control form-input-bg @error('email') is-invalid @enderror"
+                    name="email" value="{{ $email ?? old('email') }}" required autocomplete="email"
+                    autofocus>
 
                     @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
                   <label for="tb-remail">Email</label>
                   <div class="invalid-feedback">Email is required</div>
@@ -112,7 +117,7 @@
                 </div> --}}
                 <div class="d-flex align-items-stretch">
                   <button type="submit" class="btn btn-primary d-block w-100">
-                    {{ __('Register') }}
+                    {{ __('Reset Password') }}
                 </button>
                 </div>
               </form>
