@@ -25,6 +25,10 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="/dist/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="/dist/libs/select2/dist/css/select2.min.css">
+
+
 </head>
 
 <body>
@@ -273,7 +277,7 @@
                                     class="hide-menu">Atletas</span></a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a href="addatletas.html" class="sidebar-link"><i class="ri-user-add-line"></i><span
+                                    <a href="{{ route('atleta.create') }}" class="sidebar-link"><i class="ri-user-add-line"></i><span
                                             class="hide-menu">
                                             Novo Atleta</span></a>
                                 </li>
@@ -1099,6 +1103,24 @@
     <script src="/dist/libs/apexcharts/dist/apexcharts.min.js"></script>
     <!-- Chart JS -->
     <script src="/dist/js/pages/dashboards/dashboard1.js"></script>
+
+    <script src="/dist/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+
+    <script src="/dist/js/pages/datatable/datatable-basic.init.js"></script>
+
+    <script src="/dist/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="/dist/libs/select2/dist/js/select2.min.js"></script>
+    <script src="/dist/js/pages/forms/select2/select2.init.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataatual').text(new Date().toLocaleDateString('pt-PT', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            }));
+        });
+    </script>
 </body>
 
 </html>
