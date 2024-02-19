@@ -17,7 +17,82 @@ $(function () {
 /****************************************
  *       Basic Table                   *
  ****************************************/
-$("#zero_config").DataTable();
+$("#zero_config").DataTable({
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-PT.json',
+    }
+});
+
+/****************************************
+ *       Basic Table                   *
+ ****************************************/
+$("#listarprovas").DataTable({
+  language: {
+      url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-PT.json',
+  }
+});
+
+/****************************************
+ *       Basic Table                   *
+ ****************************************/
+$("#inscricoes").DataTable({
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-PT.json',
+    },
+    searching: false, paging: false, info: false,
+    "order": [],
+    "columnDefs": [ {
+      "targets"  : 'no-sort',
+      "orderable": false,
+    },
+    {
+      "targets": [4],
+      "type": "date",
+
+    }],
+    order: [[4, "asc"]],
+});
+
+$("#consultar").DataTable({
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-PT.json',
+    },
+    searching: false, paging: false, info: false,
+    "columnDefs": [ {
+        "targets"  : 'no-sort',
+        "orderable": false,
+    },
+    {
+        "targets": [1],
+        "type": "date",
+
+    }],
+    order: [[0, "asc"]],
+});
+
+$("#addresultados").DataTable({
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-PT.json',
+    },
+    searching: false, paging: false, info: false,
+    "columnDefs": [ {
+        "targets"  : 'no-sort',
+        "orderable": false,
+    }],
+    "order": [[ 2, 'asc' ], [ 4, 'asc' ]]
+});
+
+$("#listarresultados").DataTable({
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-PT.json',
+    },
+    searching: false, paging: false, info: false,
+    "columnDefs": [ {
+        "targets"  : 'no-sort',
+        "orderable": false,
+    }],
+    "order": [[ 2, 'asc' ]]
+});
 
 /****************************************
  *       Default Order Table           *
