@@ -22,3 +22,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/atleta/create', [App\Http\Controllers\AtletaController::class, 'create'])->name('atleta.create');
+Route::post('/atleta', [App\Http\Controllers\AtletaController::class,
+          'store'])->name('atleta.store');

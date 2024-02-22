@@ -30,6 +30,22 @@ class AtletaController extends Controller
     public function store(Request $request)
     {
         //
+        $atleta = new Atleta();
+        $atleta->nome = $request->inputNome;
+        $atleta->email = $request->inputEmail;
+        $atleta->data_nasc = $request->inputDataNasc;
+        $atleta->escalao = $request->selectEscalao;
+        $atleta->genero = $request->inputGen;
+        $atleta->cc = $request->inputCC;
+        $atleta->nif = $request->inputNIF;
+        $atleta->telemovel = $request->inputTel;
+        $atleta->nacionalidade = $request->selectNac;
+        $atleta->tshirt = $request->selectShirt;
+        $atleta->federado = $request->has('switchFederado');
+        $atleta->foto = $request->inputFoto;
+        $atleta->save();
+        return redirect()->route('atleta.create')
+        ->with('message', 'Atleta criado com sucesso!');
     }
 
     /**

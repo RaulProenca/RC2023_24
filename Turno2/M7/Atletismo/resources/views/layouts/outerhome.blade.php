@@ -1124,7 +1124,14 @@
                 month: 'long',
                 day: 'numeric'
             }));
+
+            $('#btnReset').click(function () {
+                $('.select2').val('OP').trigger('change');
+            });
         });
+
+
+
     </script>
 </body>
 

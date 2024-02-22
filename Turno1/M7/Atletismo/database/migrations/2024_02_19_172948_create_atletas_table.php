@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('atletas', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('email')->unique();
+            $table->date('data_nasc');
+            $table->string('escalao');
+            $table->enum('genero', ['M', 'F']);
+            $table->bigInteger('cc')->unique();
+            $table->bigInteger('nif')->unique();
+            $table->bigInteger('telemovel');
+            $table->string('nacionalidade');
+            $table->string('tshirt');
+            $table->boolean('federado')->default(true);
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }
