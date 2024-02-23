@@ -29,7 +29,22 @@ class AtletaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validação dos dados
+        $request->validate([
+            'inputNome' => 'required|string|max:255',
+            'inputEmail' => 'required|email|unique:atletas,email',
+            'inputDataNasc' => 'required|date',
+            'selectEscalao' => 'required',
+            'inputGen' => 'required',
+            'inputCC' => 'required|numeric|digits:8|unique:atletas,cc',
+            'inputNIF' => 'required|numeric|digits:9|unique:atletas,nif',
+            'inputTel' => 'required|numeric|digits:9',
+            'selectNac' => 'required',
+            'selectShirt' => 'required',
+            //'inputFoto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        //Inserção de dados na base de dados
         $atleta = new Atleta();
         $atleta->nome = $request->inputNome;
         $atleta->email = $request->inputEmail;

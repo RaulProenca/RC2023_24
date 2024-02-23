@@ -1119,6 +1119,11 @@
                 month: 'long',
                 day: 'numeric'
             }));
+
+            $("#btnReset").click(function (e) {
+                $(".select2").val("OP").trigger("change");
+            });
+
         });
     </script>
 </body>

@@ -42,33 +42,51 @@
     <div class="card overflow-hidden">
         <div class="card-body">
             <h4 class="card-title mb-3 pb-3 border-bottom" style="color: #FF8C00;">Atleta</h4>
+              @if (session()->has('message'))
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('message') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              @endif
               <form method="POST" action="{{ route('atleta.store') }}">
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="inputNome" name="inputNome"
-                                placeholder="Insira o nome do atleta" />
+                            <input type="text"
+                            class="form-control @error('inputNome') is-invalid @enderror"
+                            id="inputNome" name="inputNome"
+                            placeholder="Insira o nome do atleta" />
+
                             <label for="inputNome">Nome</label>
+                            @error('inputNome')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="inputEmail" name="inputEmail"
+                            <input type="email" class="form-control @error('inputEmail') is-invalid @enderror" id="inputEmail" name="inputEmail"
                                 placeholder="name@example.com" />
                             <label for="inputEmail">Email</label>
+                            @error('inputEmail')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating mb-3">
-                            <input type="date" class="form-control" id="inputDataNasc" name="inputDataNasc"
+                            <input type="date" class="form-control @error('inputDataNasc') is-invalid @enderror" id="inputDataNasc" name="inputDataNasc"
                                 placeholder="Data de Nascimento" />
                             <label for="inputDataNasc">Data de Nascimento</label>
+                            @error('inputDataNasc')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating mb-3">
-                            <select class="select2 form-select form-control"
+                            <select class="select2 form-select form-control @error('selectEscalao') is-invalid @enderror"
                                 style="width: 100%; padding: 1rem 12px;" placeholder="Escalão"
                                 id="selectEscalao" name="selectEscalao">
                                 <option value="OP" selected="selected" disabled>Escalão</option>
@@ -88,51 +106,66 @@
                                 <option value="V60">V60</option>
                                 <option value="V65">V65</option>
                             </select>
+                            @error('selectEscalao')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-2">
                         <label>Género</label>
                         <div class="form-floating mb-3">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inputGen" id="inputGen1"
+                                <input class="form-check-input @error('inputGen') is-invalid @enderror" type="radio" name="inputGen" id="inputGen1"
                                     value="M" checked>
                                 <label class="form-check-label" for="inputGen1">
                                     M
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inputGen" id="inputGen2"
+                                <input class="form-check-input @error('inputGen') is-invalid @enderror" type="radio" name="inputGen" id="inputGen2"
                                     value="F">
                                 <label class="form-check-label" for="inputGen2">
                                     F
                                 </label>
                             </div>
+                            @error('inputGen')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="inputCC" name="inputCC"
+                            <input type="text" class="form-control @error('inputCC') is-invalid @enderror" id="inputCC" name="inputCC"
                                 placeholder="Cartão de cidadão do atleta" />
-                            <label for="InputCC">BI/CC</label>
+                            <label for="inputCC">BI/CC</label>
+                            @error('inputCC')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="inputNIF" name="inputNIF"
+                            <input type="text" class="form-control @error('inputNIF') is-invalid @enderror" id="inputNIF" name="inputNIF"
                                 placeholder="NIf do atleta" />
                             <label for="InputNIF">NIF</label>
+                            @error('inputNIF')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="inputTel" name="inputTel"
+                            <input type="text" class="form-control @error('inputTel') is-invalid @enderror" id="inputTel" name="inputTel"
                                 placeholder="Telemóvel" />
                             <label for="InputTel">Telemóvel</label>
+                            @error('inputTel')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <select class="select2 form-select form-control"
+                            <select class="select2 form-select form-control @error('selectNac') is-invalid @enderror"
                                 style="width: 100%; padding: 1rem 12px;" placeholder="Nacionalidade"
                                 id="selectNac" name="selectNac">
                                 <option value="OP" selected="selected" disabled>Nacionalidade</option>
@@ -379,11 +412,14 @@
                                 <option value="ZM">Zâmbia</option>
                                 <option value="ZW">Zimbábue</option>
                             </select>
+                            @error('selectNac')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <select class="select2 form-select form-control"
+                            <select class="select2 form-select form-control @error('inputNome') is-invalid @enderror""
                                 style="width: 100%; padding: 1rem 12px;" placeholder="T-shirt"
                                 id="selectShirt" name="selectShirt">
                                 <option value="OP" selected="selected" disabled>T-shirt</option>
@@ -393,6 +429,9 @@
                                 <option>L</option>
                                 <option>XL</option>
                             </select>
+                            @error('selectShirt')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-4">
@@ -409,8 +448,12 @@
                             <span class="input-group-text bg-danger text-white">Foto</span>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input class="form-control" type="file" id="inputFoto" name="inputFoto">
+                                    <input class="form-control @error('inputFoto') is-invalid @enderror"" type="file" id="inputFoto" name="inputFoto">
+                                    @error('inputFoto')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                             </div>
                             <div class="ms-auto mt-3 mt-md-0">
                                 <button type="reset" id="btnReset" class="
