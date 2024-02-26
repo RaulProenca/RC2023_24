@@ -282,7 +282,7 @@
                                             Novo Atleta</span></a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="listaratletas.html" class="sidebar-link"><i class="ri-list-check"></i><span
+                                    <a href="{{ route('atleta.index') }}" class="sidebar-link"><i class="ri-list-check"></i><span
                                             class="hide-menu">Listar
                                             Atletas</span></a>
                                 </li>

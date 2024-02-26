@@ -12,7 +12,10 @@ class AtletaController extends Controller
      */
     public function index()
     {
-        //
+        //Listar Atletas
+        $atletas = Atleta::all(); //Obter todos os atletas
+        return view('atleta.index', compact('atletas'));
+
     }
 
     /**
@@ -92,6 +95,9 @@ class AtletaController extends Controller
      */
     public function destroy(Atleta $atleta)
     {
-        //
+        //Apagar atleta
+        $atleta->delete();
+        return redirect()->route('atleta.index')
+            ->with('message', 'Atleta apagado com sucesso!');
     }
 }
