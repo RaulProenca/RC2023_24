@@ -10,11 +10,11 @@
                         <a href="home.html" class="link"><i class="ri-home-3-line fs-5"></i></a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Adicionar
+                        Editar
                     </li>
                 </ol>
             </nav>
-            <h1 class="mb-0 fw-bold">Adicionar Atleta</h1>
+            <h1 class="mb-0 fw-bold">Editar Atleta</h1>
         </div>
         <div class="
     col-lg-5 col-md-6

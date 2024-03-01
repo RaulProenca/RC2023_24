@@ -28,7 +28,7 @@
 
                 </option>
             </select>
-            <a href="{{ route('atleta.create') }}" class="btn btn-info d-flex align-items-center ms-2">
+            <a href="addatletas.html" class="btn btn-info d-flex align-items-center ms-2">
                 <i class="ri-add-line me-1"></i>
                 Inserir Atleta
             </a>

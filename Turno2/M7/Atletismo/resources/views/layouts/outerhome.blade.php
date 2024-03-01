@@ -24,8 +24,11 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <link rel="stylesheet" href="/dist/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="/dist/libs/select2/dist/css/select2.min.css">
+
+
 </head>
 
 <body>
@@ -66,14 +69,14 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="{{ route('home') }}">
+                    <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="/assets/images/logo.jpg" width="45" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="/assets/images/logo.jpg" alt="homepage" class="light-logo" />
+                            <img src="/assets/images/logo.jpg" width="45" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
@@ -82,7 +85,7 @@
                             <!-- <img src="/assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
                             <h6 style="font-weight: bolder; padding-top: 15px;">CPR A-DO-BARBAS</h6>
                             <!-- Light Logo text -->
-                            <img src="/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            {{-- <img src="/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> --}}
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -126,14 +129,6 @@
                     <ul class="navbar-nav">
 
                         <!-- ============================================================== -->
-                        <!-- Messages -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- End Messages -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- Comment -->
                         <!-- ============================================================== -->
 
                         <!-- ============================================================== -->
@@ -148,12 +143,12 @@
                                     class="profile-pic rounded-circle" />
                                 <div class="d-none d-md-flex">
                                     <span class="ms-2">Olá,
-                                            <span class="text-dark fw-bold">
-                                                @auth()
-                                                    {{ Auth::user()->name }}
-                                                @endauth
-                                            </span>
+                                        <span class="text-dark fw-bold">
+                                            @auth
+                                                {{ Auth::user()->name }}
+                                            @endauth
                                         </span>
+                                    </span>
                                     <span>
                                         <i data-feather="chevron-down" class="feather-sm"></i>
                                     </span>
@@ -237,7 +232,7 @@
                               ">Editar</span>
                                                 </div>
                                             </a>
-
+                                            <!-- Message -->
 
                                         <div class="mt-4">
                                             <a class="btn btn-info text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -287,7 +282,7 @@
                                             Novo Atleta</span></a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="listaratletas.html" class="sidebar-link"><i class="ri-list-check"></i><span
+                                    <a href="{{ route('atleta.index') }}" class="sidebar-link"><i class="ri-list-check"></i><span
                                             class="hide-menu">Listar
                                             Atletas</span></a>
                                 </li>
@@ -364,7 +359,7 @@
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
-            <!-- ============================================================== -->
+
             @yield('content')
             <!-- footer -->
             <!-- ============================================================== -->
@@ -1125,13 +1120,11 @@
                 day: 'numeric'
             }));
 
-            $('#btnReset').click(function () {
-                $('.select2').val('OP').trigger('change');
+            $("#btnReset").click(function (e) {
+                $(".select2").val("OP").trigger("change");
             });
+
         });
-
-
-
     </script>
 </body>
 

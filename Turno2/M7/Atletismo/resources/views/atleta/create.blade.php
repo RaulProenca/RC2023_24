@@ -27,7 +27,7 @@
 
                 </option>
             </select>
-            <a href="listaratletas.html" class="btn btn-success d-flex align-items-center ms-2">
+            <a href="{{ route('atleta.index') }}" class="btn btn-success d-flex align-items-center ms-2">
                 <i class="ri-list-check me-1"></i>
                 Listar Atletas
             </a>

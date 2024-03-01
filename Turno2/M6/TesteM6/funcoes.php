@@ -12,12 +12,11 @@ function printMesesTemp(){
                     <td>$temp</td>
                     <td>";
                     if($temp != ""){
-                        $str .= "<a href='index.php?mes=$mes&temp=$temp'>
+                        $str .="<a href='index.php?mes=$mes&temp=$temp'>
                             <img src='./images/edit.png' alt='editar' width='20px' />
                         </a>";
                     }
-        $str .="    </td>
-                </tr>";
+        $str .="</td></tr>";
     }
     echo $str;
 }
@@ -26,7 +25,7 @@ function printMeses(){
     $str = "";
     foreach($_SESSION["mesesTemp"] as $mes => $temp){
         if(isset($_GET["mes"]) && $_GET["mes"] == $mes){
-            $str .= "<option selected value='$mes'>$mes</option>";
+            $str .= "<option value='$mes' selected>$mes</option>";
         }else{
             $str .= "<option value='$mes'>$mes</option>";
         }
@@ -53,3 +52,7 @@ function exists(){
         return true;
     }
 }
+
+
+
+?>

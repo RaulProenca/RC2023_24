@@ -10,11 +10,11 @@
                         <a href="home.html" class="link"><i class="ri-home-3-line fs-5"></i></a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Adicionar
+                        Editar
                     </li>
                 </ol>
             </nav>
-            <h1 class="mb-0 fw-bold">Adicionar Atleta</h1>
+            <h1 class="mb-0 fw-bold">Editar Atleta</h1>
         </div>
         <div class="
     col-lg-5 col-md-6
@@ -42,22 +42,21 @@
     <div class="card overflow-hidden">
         <div class="card-body">
             <h4 class="card-title mb-3 pb-3 border-bottom" style="color: #FF8C00;">Atleta</h4>
-              @if (session()->has('message'))
-              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>{{ session('message') }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              @endif
-              <form method="POST" action="{{ route('atleta.store') }}">
+             @if (session()->has('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('message') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+             @endif
+
+
+             <form method="POST" action="{{ route('atleta.store') }}">
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
-                            <input type="text"
-                            class="form-control @error('inputNome') is-invalid @enderror"
-                            id="inputNome" name="inputNome"
-                            placeholder="Insira o nome do atleta" />
-
+                            <input type="text" required class="form-control @error('inputNome') is-invalid @enderror" id="inputNome" name="inputNome"
+                                placeholder="Insira o nome do atleta" value="{{ old('inputNome') }}" />
                             <label for="inputNome">Nome</label>
                             @error('inputNome')
                                 <p class="text-danger">{{ $message }}</p>
@@ -66,8 +65,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control @error('inputEmail') is-invalid @enderror" id="inputEmail" name="inputEmail"
-                                placeholder="name@example.com" />
+                            <input type="email" required class="form-control @error('inputEmail') is-invalid @enderror" id="inputEmail" name="inputEmail"
+                                placeholder="name@example.com" value="{{ old('inputEmail') }}" />
                             <label for="inputEmail">Email</label>
                             @error('inputEmail')
                                 <p class="text-danger">{{ $message }}</p>
@@ -76,8 +75,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating mb-3">
-                            <input type="date" class="form-control @error('inputDataNasc') is-invalid @enderror" id="inputDataNasc" name="inputDataNasc"
-                                placeholder="Data de Nascimento" />
+                            <input type="date" required class="form-control @error('inputDataNasc') is-invalid @enderror" id="inputDataNasc" name="inputDataNasc"
+                                placeholder="Data de Nascimento" value="{{ old('inputDataNasc') }}" />
                             <label for="inputDataNasc">Data de Nascimento</label>
                             @error('inputDataNasc')
                                 <p class="text-danger">{{ $message }}</p>
@@ -86,16 +85,25 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating mb-3">
-                            <select class="select2 form-select form-control @error('selectEscalao') is-invalid @enderror"
+                            <select required class="select2 form-select form-control @error('selectEscalao') is-invalid @enderror"
                                 style="width: 100%; padding: 1rem 12px;" placeholder="Escalão"
                                 id="selectEscalao" name="selectEscalao">
                                 <option value="OP" selected="selected" disabled>Escalão</option>
-                                @foreach ($escaloes as $index => $value)
-                                    <option value="{{ $index }}"
-                                        @if(old("selectEscalao") == $index) selected @endif >
-                                        {{ $value }}
-                                    </option>
-                                @endforeach
+                                <option value="BA" @if(old('selectEscalao') == 'BA') selected @endif>Benjamin A</option>
+                                <option value="BB" @if(old('selectEscalao') == 'BB') selected @endif>Benjamin B</option>
+                                <option value="IF" @if(old('selectEscalao') == 'IF') selected @endif>Infantil</option>
+                                <option value="IN" @if(old('selectEscalao') == 'IN') selected @endif>Iniciado</option>
+                                <option value="JV" @if(old('selectEscalao') == 'JV') selected @endif>Juvenil</option>
+                                <option value="JU" @if(old('selectEscalao') == 'JU') selected @endif>Júnior</option>
+                                <option value="S23" @if(old('selectEscalao') == 'S23') selected @endif>Sub-23</option>
+                                <option value="SN" @if(old('selectEscalao') == 'SN') selected @endif>Sénior</option>
+                                <option value="V35" @if(old('selectEscalao') == 'V35') selected @endif>V35</option>
+                                <option value="V40" @if(old('selectEscalao') == 'V40') selected @endif>V40</option>
+                                <option value="V45" @if(old('selectEscalao') == 'V45') selected @endif>V45</option>
+                                <option value="V50" @if(old('selectEscalao') == 'V50') selected @endif>V50</option>
+                                <option value="V55" @if(old('selectEscalao') == 'V55') selected @endif>V55</option>
+                                <option value="V60" @if(old('selectEscalao') == 'V60') selected @endif>V60</option>
+                                <option value="V65" @if(old('selectEscalao') == 'V65') selected @endif>V65</option>
                             </select>
                             @error('selectEscalao')
                                 <p class="text-danger">{{ $message }}</p>
@@ -106,28 +114,25 @@
                         <label>Género</label>
                         <div class="form-floating mb-3">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input @error('inputGen') is-invalid @enderror" type="radio" name="inputGen" id="inputGen1"
+                                <input class="form-check-input" type="radio" name="inputGen" id="inputGen1"
                                     value="M" checked>
                                 <label class="form-check-label" for="inputGen1">
                                     M
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input @error('inputGen') is-invalid @enderror" type="radio" name="inputGen" id="inputGen2"
+                                <input class="form-check-input" type="radio" name="inputGen" id="inputGen2"
                                     value="F">
                                 <label class="form-check-label" for="inputGen2">
                                     F
                                 </label>
                             </div>
-                            @error('inputGen')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control @error('inputCC') is-invalid @enderror" id="inputCC" name="inputCC"
-                                placeholder="Cartão de cidadão do atleta" />
+                            <input required type="text" class="form-control @error('inputCC') is-invalid @enderror" id="inputCC" name="inputCC"
+                                placeholder="Cartão de cidadão do atleta" value="{{ old('inputCC') }}" />
                             <label for="inputCC">BI/CC</label>
                             @error('inputCC')
                                 <p class="text-danger">{{ $message }}</p>
@@ -136,9 +141,9 @@
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control @error('inputNIF') is-invalid @enderror" id="inputNIF" name="inputNIF"
-                                placeholder="NIf do atleta" />
-                            <label for="InputNIF">NIF</label>
+                            <input required type="text" class="form-control @error('inputNIF') is-invalid @enderror" id="inputNIF" name="inputNIF"
+                                placeholder="NIf do atleta" value="{{ old('inputNIF') }}" />
+                            <label for="inputNIF">NIF</label>
                             @error('inputNIF')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -146,9 +151,9 @@
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control @error('inputTel') is-invalid @enderror" id="inputTel" name="inputTel"
-                                placeholder="Telemóvel" />
-                            <label for="InputTel">Telemóvel</label>
+                            <input required type="text" class="form-control @error('inputTel') is-invalid @enderror" id="inputTel" name="inputTel"
+                                placeholder="Telemóvel" value="{{ old('inputTel') }}" />
+                            <label for="inputTel">Telemóvel</label>
                             @error('inputTel')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -156,14 +161,13 @@
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <select class="select2 form-select form-control @error('selectNac') is-invalid @enderror"
+                            <select required class="select2 form-select form-control @error('selectNac') is-invalid @enderror"
                                 style="width: 100%; padding: 1rem 12px;" placeholder="Nacionalidade"
                                 id="selectNac" name="selectNac">
                                 <option value="OP" selected="selected" disabled>Nacionalidade</option>
-                                @foreach ($paises as $index => $value)
-                                    <option value="{{ $index }}"
-                                        @if(old("selectNac") == $index) selected @endif >
-                                        {{ $value }}
+                                @foreach ($countries as $value => $country)
+                                    <option value="{{ $value }}"
+                                     @if(old('selectNac') == $value) selected @endif>{{ $country }}
                                     </option>
                                 @endforeach
                             </select>
@@ -174,16 +178,15 @@
                     </div>
                     <div class="col-4">
                         <div class="form-floating mb-3">
-                            <select class="select2 form-select form-control @error('inputNome') is-invalid @enderror""
+                            <select class="select2 form-select form-control @error('selectShirt') is-invalid @enderror"
                                 style="width: 100%; padding: 1rem 12px;" placeholder="T-shirt"
                                 id="selectShirt" name="selectShirt">
                                 <option value="OP" selected="selected" disabled>T-shirt</option>
-                                @foreach ($tamanhos as $index => $value)
-                                    <option value="{{ $index }}"
-                                        @if(old("selectShirt") == $index) selected @endif >
-                                        {{ $index }}
-                                    </option>
-                                @endforeach
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
                             </select>
                             @error('selectShirt')
                                 <p class="text-danger">{{ $message }}</p>
@@ -204,13 +207,13 @@
                             <span class="input-group-text bg-danger text-white">Foto</span>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input class="form-control @error('inputFoto') is-invalid @enderror"" type="file" id="inputFoto" name="inputFoto">
-                                    @error('inputFoto')
-                                        <p class="text-danger">{{ $message }}</p>
-                                    @enderror
+                                    <input class="form-control @error('inputFoto') is-invalid @enderror" type="file" id="inputFoto" name="inputFoto">
                                 </div>
-
+                                @error('inputFoto')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
+
                             <div class="ms-auto mt-3 mt-md-0">
                                 <button type="reset" id="btnReset" class="
                                         btn btn-warning
