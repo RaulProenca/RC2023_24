@@ -654,6 +654,38 @@ class AtletaController extends Controller
     public function update(Request $request, Atleta $atleta)
     {
         //
+        //Validação dos dados
+        $request->validate([
+            'inputNome' => 'required|string|max:255',
+            'inputEmail' => 'required|email',
+            'inputDataNasc' => 'required|date',
+            'selectEscalao' => 'required',
+            'inputGen' => 'required',
+            'inputCC' => 'required|numeric|digits:8',
+            'inputNIF' => 'required|numeric|digits:9',
+            'inputTel' => 'required|numeric|digits:9',
+            'selectNac' => 'required',
+            'selectShirt' => 'required',
+            //'inputFoto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        //Atualização de dados na base de dados
+
+        $atleta->nome = $request->inputNome;
+        $atleta->email = $request->inputEmail;
+        $atleta->data_nasc = $request->inputDataNasc;
+        $atleta->escalao = $request->selectEscalao;
+        $atleta->genero = $request->inputGen;
+        $atleta->cc = $request->inputCC;
+        $atleta->nif = $request->inputNIF;
+        $atleta->telemovel = $request->inputTel;
+        $atleta->nacionalidade = $request->selectNac;
+        $atleta->tshirt = $request->selectShirt;
+        $atleta->federado = $request->has('switchFederado');
+        $atleta->foto = $request->inputFoto;
+        $atleta->save();
+        return redirect()->route('atleta.edit', $atleta->id)
+        ->with('message', 'Atleta atualizado com sucesso!');
     }
 
     /**
